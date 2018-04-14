@@ -28,8 +28,8 @@ The game is evaluated by 3 scores: moves, time and star rating.
 
 You can download this game from [here](https://github.com/Gabriu/memory-game) and open index.html file in your browser.
 Another option - you can enter html file on [this link](https://htmlpreview.github.io/) to preview the game.
-![Demo version](./img/demo.jpg)
 
 ## Contributing
 
 Here is the [starter code](https://github.com/udacity/fend-project-memory-game) made by Udacity.
+![Demo version](./img/demo.jpg)
