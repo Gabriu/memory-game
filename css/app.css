@@ -1,0 +1,314 @@
+/*
+ * General styling
+ */
+ html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #ffffff url('../img/geometry2.png'); /* Background pattern from Subtle Patterns */
+    font-family: 'Coda', cursive;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+h1 {
+    margin-bottom: 0;
+    text-transform: uppercase;
+}
+
+ /*
+  * Styles for the Score Panel
+  */
+ .score-panel {
+     margin-top: 5px;
+     margin-bottom: 5px;
+     font-weight: bold;
+     width: 260px;
+ }
+
+ .score-panel .moves {
+     display: inline-block;
+     float: left;
+     width: 60%;
+     height: 40px;
+     font-size: 16px;
+ }
+
+ .score-panel .stars {
+     display: inline-block;
+     width: 40%;
+     height: 40px;
+     margin: 0;
+     padding: 0;
+     font-size: 18px;
+     float: right;
+ }
+
+ .score-panel .stars li {
+     display: inline-block;
+     list-style: none;
+     color: yellow;
+ }
+
+ .score-panel .timer {
+     display: inline-block;
+     width: 60%;
+     float: left;
+     height: 40px;
+     font-size: 16px;
+ }
+
+ .score-panel .restart {
+     float: right;
+     cursor: pointer;
+     width: 40%;
+     height: 40px;
+     font-size: 20px;
+ }
+
+ .restart i:hover {
+   color: #66ffcc;
+ }
+
+ /*
+ * Styles for the Deck of cards
+ */
+.deck {
+    width: 95%;
+    background: linear-gradient(160deg, #02ccba 0%, #aa7ecd 100%);
+    padding: 0.3rem;
+    border-radius: 10px;
+    box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 0 3em;
+    pointer-events: none;
+}
+
+.deck .card {
+    height: 19vw;
+	  width: 19vw;
+	  margin: 1vh 1vw;
+    background: #2e3d49;
+    font-size: 0;
+    color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 5px 2px 20px 0 rgba(46, 61, 73, 0.5);
+    pointer-events: auto;
+}
+
+.deck .card.open {
+    background: #02b3e4;
+    cursor: default;
+    pointer-events: none;
+}
+
+.deck .card.show {
+    font-size: 1.5em;
+}
+
+.deck .card.match {
+    cursor: default;
+    background: #02ccba;
+    font-size: 1.5em;
+    animation-timing-function: ease-in;
+	  animation: bounce 1s;
+    -webkit-animation: bounce 1s;
+}
+
+.deck .card.unmatch {
+    cursor: default;
+  	background: red;
+    animation-duration: 0.5s;
+  	-webkit-keyframes: shake 0.4s ease-in-out;
+  	animation: shake 0.4s ease-in-out;
+}
+
+/*
+ * Bounce and shake keyframes
+ */
+@keyframes bounce {
+	from {
+		transform: translateY(0px);
+	}
+	to {
+		transform: translateY(-7px);
+	}
+}
+
+@-webkit-keyframes bounce {
+	from {
+		transform: translateY(0px);
+	}
+	to {
+		transform: translateY(-7px);
+	}
+}
+
+@-webkit-keyframes shake {
+	0%, 100% {
+		-webkit-transform: translateX(0);
+	}
+	20%, 60% {
+		-webkit-transform: translateX(-10px);
+	}
+	40%, 80% {
+		-webkit-transform: translateX(10px);
+	}
+}
+
+@keyframes shake {
+	0%, 100% {
+		transform: translateX(0);
+	}
+	20%, 60% {
+		transform: translateX(-10px);
+	}
+	40%, 80% {
+		transform: translateX(10px);
+	}
+}
+
+/*
+ * Styles for the Congratulations popup (some lines of code was used from the example in https://www.w3schools.com/howto/howto_js_lightbox.asp)
+ */
+ .popup {
+     display: none;
+     position: fixed;
+     top: 0;
+     left: 0;
+     z-index: 1;
+     width: 100%;
+     height: 100%;
+     overflow: auto;
+     background-color: rgba(0, 0, 0, 0.6);
+ }
+
+ .popup-content {
+     position: relative;
+     margin: 30px auto 0 auto;
+     max-width: 250px;
+     padding: 2em;
+     font-weight: bold;
+     border-radius: 15px;
+     box-shadow: 12px 15px 20px 0 rgba(46, 61, 73, 0.5);
+     text-align: center;
+     background: linear-gradient(to top left, #66ffcc 0%, #ff9966 100%);
+ }
+
+.score {
+   text-decoration: underline;
+}
+
+.rating li {
+    display: inline-block;
+    list-style: none;
+  	color: yellow;
+}
+
+.replay {
+  	background-color: #02ccba;
+    text-transform: uppercase;
+    margin: 1em;
+    padding: 10px 15px;
+  	border-radius: 15px;
+  	cursor: pointer;
+    border: 0;
+    font-weight: bold;
+}
+
+/*
+ * media queries
+ */
+@media screen and (min-width: 370px) {
+  .deck .card {
+    height: 20vw;
+ 	  width: 20vw;
+  }
+
+  .score-panel {
+    width: 320px;
+  }
+
+   .score-panel .moves {
+     font-size: 18px;
+   }
+
+   .score-panel .timer {
+     font-size: 18px;
+   }
+
+   .deck .card.show {
+       font-size: 1.75em;
+   }
+
+   .deck .card.match {
+       font-size: 1.75em;
+   }
+}
+
+@media screen and (min-width: 610px) {
+  .deck {
+		max-width: 600px;
+		height: 600px;
+		padding: 20px;
+	}
+
+  .deck .card {
+    height: 125px;
+    width: 125px;
+    margin: 0;
+  }
+
+  .deck .card.show {
+      font-size: 2em;
+  }
+
+  .deck .card.match {
+      font-size: 2em;
+  }
+}
+
+@media screen and (min-width: 700px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  .popup-content h3 {
+    font-size: 1.5rem;
+  }
+
+  .popup-content .replay {
+    font-size: 0.9rem;
+  }
+
+  .popup-content {
+    max-width: 290px;
+  }
+}
