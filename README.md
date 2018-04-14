@@ -31,5 +31,6 @@ Another option - you can enter html file on [this link](https://htmlpreview.gith
 
 ## Contributing
 
-Here is the [starter code](https://github.com/udacity/fend-project-memory-game) made by Udacity.
+Here is the [starter code](https://github.com/udacity/fend-project-memory-game) made by Udacity and the example picture of my Memory game.
+
 ![Demo version](./img/demo.jpg)
