@@ -26,9 +26,9 @@ The game is evaluated by 3 scores: moves, time and star rating.
 
 ## Installation
 
-You can download this game from (https://github.com/Gabriu/memory-game) and open index.html file in your browser.
+You can download this game from [here](https://github.com/Gabriu/memory-game) and open index.html file in your browser.
 Another option - you can enter html file on [this link](https://htmlpreview.github.io/) to preview the game.
-![Demo version](../img/demo.jpg)
+![Demo version](./img/demo.jpg)
 
 ## Contributing
 
